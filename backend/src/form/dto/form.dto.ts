@@ -13,11 +13,10 @@ export class formDto{
         gender:string;
         
         @IsNotEmpty()
-        designation:string;
+        @IsString({each:true})
+        designation:string[];
         
         @IsNotEmpty()
-        @Min(1000000000)
-        @Max(9999999999)
         mobile:number;
     
         @IsNotEmpty()

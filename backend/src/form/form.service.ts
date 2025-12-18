@@ -13,8 +13,8 @@ export class FormService {
             return new BadRequestException('No Data Found Please fill the form')
         }
         data.password=await bcrypt.hash(data.password,10)
+        data.mobile=Number(data.mobile)
         return this.formRepo.createForm(data)
-
         }catch(err){
             return new Error(err)
         }

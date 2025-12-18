@@ -11,16 +11,20 @@ export class formEntity{
     @IsNotEmpty()
     @IsString()
     name:string;
+
     @Column()
     @IsNotEmpty()
     @IsEmail()
     email:string;
+
     @Column()
     @IsNotEmpty()
     gender:string;
-    @Column()
+
+    @Column('text',{array:true})
     @IsNotEmpty()
-    designation:string;
+    designation:string[];
+    
     @Column({type:'bigint'})
     @IsNotEmpty()
     mobile:number;
